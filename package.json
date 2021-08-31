@@ -1,0 +1,51 @@
+{
+  "name": "@connor-davis/hymachi",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "src/bin.js",
+  "author": {
+    "name": "Connor Davis",
+    "email": "19422@kloofhigh.co.za"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connor-davis/hymachi.git"
+  },
+  "private": false,
+  "scripts": {
+    "build": "npm run build-linux && npm run build-windows && npm run build-mac",
+    "build-linux": "node build.js --target linux",
+    "build-mac": "node build.js --target darwin",
+    "build-windows": "node build.js --target win32",
+    "lint": "standard --fix",
+    "test": "node test"
+  },
+  "dependencies": {
+    "@hyperswarm/dht": "^5.0.0-rc.6",
+    "chalk": "^4.1.2",
+    "hypercore-crypto": "^2.3.0",
+    "net": "^1.0.2",
+    "pump": "^3.0.0",
+    "serve": "^12.0.0",
+    "terminal-kit": "^2.1.6",
+    "yargs": "^17.1.1"
+  },
+  "bin": {
+    "hymachi": "src/bin.js"
+  },
+  "pkg-win32": {
+    "targets": [
+      "node14-win-x64"
+    ],
+    "assets": [
+      "./node_modules/sodium-native/prebuilds/win32-x64/*",
+      "./node_modules/utp-native/prebuilds/win32-x64/*",
+      "./node_modules/better-sqlite3/build/Release/better_sqlite3.node"
+    ]
+  },
+  "devDependencies": {
+    "pkg": "^5.3.1",
+    "standard": "^16.0.3",
+    "tape": "^5.3.1"
+  }
+}
