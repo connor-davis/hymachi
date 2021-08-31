@@ -1,6 +1,6 @@
 {
   "name": "@connor-davis/hymachi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "src/bin.js",
   "author": {
